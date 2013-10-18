@@ -394,14 +394,13 @@ Circle.prototype.save = function() {
 // An image
 function Image(anchor, src, angle, length, width) {
     //a shape is a rendering of 2 arbitrary points
-    var image = this;
     this.anchor = anchor;
     this.root = anchor.root;
     this.papers = [];
     this.children = [];
     this.type = "image";
     this.length = length || 50;
-    this._angle = 0;//angle / (180 / Math.PI);
+    this._angle = angle / (180 / Math.PI);
     this.width = width || 6;
     this.src = src || "object-locked.png";  // TODO: Use src
 
