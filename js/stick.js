@@ -296,6 +296,7 @@ $(function() {
         if (window.username) {
             var name = prompt("Enter a name for the figure you want to add to the library.", "");
             $.ajax({
+                type: "POST",
                 url: "//doodleblaze.com/users.php",
                 data: {
                     "action": "save",
@@ -429,6 +430,11 @@ $(function() {
     $(".image").click(function() {
         var src = prompt("Enter new image source", selected_shape.src);
         new Image(selected_shape, src);//, src, Math.floor(420 * Math.random()) % 360);
+        selected_shape.renderAll();
+    });
+    $(".text").click(function() {
+        var text = prompt("Enter new text", selected_shape.text);
+        new Text(selected_shape, text);//, src, Math.floor(420 * Math.random()) % 360);
         selected_shape.renderAll();
     });
 
